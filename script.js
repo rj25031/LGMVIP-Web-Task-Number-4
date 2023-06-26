@@ -11,8 +11,6 @@ keys.addEventListener("click", (e)=>{
         display.innerHTML=str;
     }else if(target.classList.contains('delete')){
         backspace();
-    }else if(target.classList.contains('plus-minus')){
-        plusMinus();
     }else if(target.classList.contains('equal-to')){
         result();
     }
@@ -51,10 +49,5 @@ function result(){
     }
 }
 
-function plusMinus(){
-    let val = Number.parseInt(str);
-    str=str+togglePlusMinus(val).toString();
-    display.innerHTML=str;
-}
 
   
