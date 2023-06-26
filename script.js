@@ -3,7 +3,7 @@ const display = document.getElementsByClassName("display")[0];
 var str='';
 keys.addEventListener("click", (e)=>{
     const target = e.target;
-    const value = target.innerHTML
+    const value = target.innerHTML;
     if(target.classList.contains('all-clear')){
         allClear();
     }else if(target.classList.contains('key')){
@@ -42,14 +42,18 @@ function backspace(){
 }
 
 function result(){
-    str=eval(str);
-    str=str.toString();
-    display.innerHTML=str;
+    try{
+        str=eval(str);
+        str=str.toString();
+        display.innerHTML=str;
+    }catch(error){
+        display.innerHTML=error;
+    }
 }
 
 function plusMinus(){
-    let val = Number.parseInt(str)
-    str=str+togglePlusMinus(val).toString()
+    let val = Number.parseInt(str);
+    str=str+togglePlusMinus(val).toString();
     display.innerHTML=str;
 }
 
